@@ -1,1 +1,1 @@
-export { Wrapper } from "./wrapper";
+export { Wrapper, SecondWrapper, ThirdWrapper, MainWrapper } from "./wrapper";
