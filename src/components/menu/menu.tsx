@@ -7,7 +7,7 @@ type Tab = {
 
 type Props = {
   tabs: Tab[];
-  contents: React.ReactNode[]
+  contents: React.ReactNode[];
   active?: number;
   onChange?: (active: number) => void;
 }

@@ -3,6 +3,8 @@ import { ThemeProvider } from "styled-components";
 
 const theme = {
   baseColor: "#ffffff",
+  buttonHeight: "32px",
+  backgroundColorActive: "#62c400",
   fontSizes: {
     small: "1em",
     medium: "2em",
