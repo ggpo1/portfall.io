@@ -5,6 +5,7 @@ const theme = {
   baseColor: "#ffffff",
   buttonHeight: "32px",
   backgroundColorActive: "#62c400",
+  textColorDefault: "#747474",
   fontSizes: {
     small: "1em",
     medium: "2em",

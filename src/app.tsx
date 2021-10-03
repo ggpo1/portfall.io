@@ -1,25 +1,15 @@
 import { memo } from "react";
-import styled, { keyframes } from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { fadeInLeft, fadeInRight } from "react-animations";
 import { Menu } from "components";
-import { Main } from "features";
+import { Main, Companies } from "features";
 import { Store, MenuStore } from "store";
 import { tabs } from "./assets";
 import * as Markdown from "./app.styles";
 
-const LeftBounce = styled.div`
-    animation: 1s ${keyframes`${fadeInLeft}`};
-`;
-
-const RightBounce = styled.div`
-    animation: 1s ${keyframes`${fadeInRight}`};
-`;
-
 const contents = [
-  <LeftBounce>
-    <Main />
-  </LeftBounce>
+  <Main />,
+  <div>Навыки</div>,
+  <Companies />
 ];
 
 export const App = memo(() => {
@@ -32,7 +22,12 @@ export const App = memo(() => {
 
   return (
     <Markdown.Wrapper>
-      <Menu active={active} tabs={tabs} contents={contents} onChange={handleChange} />
+      <Menu
+        active={active}
+        tabs={tabs}
+        contents={contents}
+        onChange={handleChange}
+      />
     </Markdown.Wrapper>
   );
 });

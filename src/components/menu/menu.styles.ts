@@ -10,6 +10,7 @@ export const Tabs = styled.div`
   display: flex;
   gap: 10px;
   flex-grow: 0;
+  margin-bottom: 10px;
 `;
 
 export const Tab = styled.button<{ isActive: boolean }>`
@@ -37,5 +38,8 @@ export const Content = styled.div`
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #e5e5e5;
+  padding: 20px;
+  box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
 `;
