@@ -1,1 +1,1 @@
-export {};
+export { PointsLayer } from "./layers";

@@ -21,9 +21,9 @@ export const Companies = memo(() => {
   }, []);
 
   return (
-    <>
+    <Markdown.Wrapper>
       <Markdown.Map id="map" />
-      
-    </>
+      <Markdown.List />
+    </Markdown.Wrapper>
   );
 });

@@ -38,8 +38,8 @@ export const Content = styled.div`
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-  border-radius: 4px;
+  border-radius: ${({ theme }) => theme.blockBorderRadius};
   border: 1px solid #e5e5e5;
   padding: 20px;
-  box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: ${({ theme }) => theme.blockShadow};
 `;

@@ -24,7 +24,7 @@ export const Menu = memo((props: Props) => {
       <Markdown.Tabs>
         {tabs.map(({ title }, index) => {
           return (
-            <Markdown.Tab isActive={index === active} onClick={handleClick(index)}>
+            <Markdown.Tab tabIndex={index + 1} isActive={index === active} onClick={handleClick(index)}>
               {title}
             </Markdown.Tab>
           );
