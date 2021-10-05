@@ -1,5 +1,4 @@
 import { memo, useState } from "react";
-import { Bounce } from "components";
 import * as Markdown from "./profile-photo.styles";
 
 type Props = {
