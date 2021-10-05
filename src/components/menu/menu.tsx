@@ -1,4 +1,4 @@
-import { memo, useMemo, useCallback, useState } from "react";
+import { memo, useCallback, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,8 +19,8 @@ type Props = {
 
 export const Menu = memo((props: Props) => {
   const { tabs, contents } = props;
-  const [count, setCount] = useState(0);
-  const active = useMemo(() => document.location.pathname, [count]);
+  const [, setCount] = useState(0);
+  const active = document.location.pathname;
   const handleUpdate = useCallback(() => setCount((prev) => prev + 1), []);
 
   return (

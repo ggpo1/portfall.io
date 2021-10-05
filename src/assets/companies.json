@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "isActive": false,
     "title": "ООО Т-ЛОГИКА",
     "description": "",
     "scope": "Junior Java/Python Developer",
@@ -17,6 +18,7 @@
   },
   {
     "id": 2,
+    "isActive": false,
     "title": "ООО ВИДЕОСАППОРТ",
     "description": "",
     "scope": "Junior Frontend Developer",
@@ -33,6 +35,7 @@
   },
   {
     "id": 3,
+    "isActive": false,
     "title": "ООО Техновик",
     "description": "",
     "scope": "Junior Java/Python Developer",
@@ -49,7 +52,8 @@
   },
   {
     "id": 4,
-    "title": "ООО Т-ЛОГИКА",
+    "isActive": true,
+    "title": "ООО Мегаполис",
     "description": "",
     "scope": "Junior Java/Python Developer",
     "stack": "",

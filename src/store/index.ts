@@ -1,2 +1,4 @@
 export * as Store from "./store";
-export { MenuStore } from "./menu";
+
+export { CompaniesSlice } from "./companies";
+export type { CompaniesState } from "./companies";

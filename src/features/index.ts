@@ -1,2 +1,2 @@
 export { Main } from "./main";
-export { Companies, CompaniesStore } from "./companies";
+export { Companies } from "./companies";
