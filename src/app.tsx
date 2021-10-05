@@ -9,12 +9,13 @@ import * as Markdown from "./app.styles";
 const contents = [
   <Main />,
   <div>Навыки</div>,
-  <Companies />
+  <Companies />,
+  <div>Контакты</div>
 ];
 
 export const App = memo(() => {
   const dispatch = useDispatch();
-  const active = useSelector((store: Store.GState) => store.menu.active);
+  // const active = useSelector((store: Store.GState) => store.menu.active);
 
   const handleChange = (active: number) => {
     dispatch(MenuStore.menuSlice.actions.setActive(active));
@@ -23,10 +24,9 @@ export const App = memo(() => {
   return (
     <Markdown.Wrapper>
       <Menu
-        active={active}
         tabs={tabs}
         contents={contents}
-        onChange={handleChange}
+        // onChange={handleChange}
       />
     </Markdown.Wrapper>
   );

@@ -1,14 +1,18 @@
 [
   {
+    "id": "/",
     "title": "Главная"
   },
   {
+    "id": "/skills",
     "title": "Навыки"
   },
   {
+    "id": "/companies",
     "title": "Компании"
   },
   {
+    "id": "/contacts",
     "title": "Контакты"
   }
 ]

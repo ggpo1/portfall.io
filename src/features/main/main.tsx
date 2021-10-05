@@ -6,12 +6,12 @@ export const Main = memo(() => {
   return (
     <Markdown.Wrapper>
       <Bounce.Left>
-        <ProfilePhoto src="img/1.jpg" size={256} />
+        {/* <ProfilePhoto src="img/1.jpg" size={256} /> */}
       </Bounce.Left>
       <Bounce.Right>
-        <Markdown.FullName>
+        {/* <Markdown.FullName>
           Архангельский Владимир Александрович
-        </Markdown.FullName>
+        </Markdown.FullName> */}
       </Bounce.Right>
     </Markdown.Wrapper>
   );
