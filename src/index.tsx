@@ -8,13 +8,13 @@ import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Store.Provider>
-      <Theme>
-        <Body>
+    <Theme>
+      <Body>
+        <Store>
           <App />
-        </Body>
-      </Theme>
-    </Store.Provider>
+        </Store>
+      </Body>
+    </Theme>
   </React.StrictMode>,
   document.getElementById('root')
 );

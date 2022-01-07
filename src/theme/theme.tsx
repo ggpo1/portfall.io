@@ -1,7 +1,7 @@
 import { memo } from "react";
-import { ThemeProvider } from "styled-components";
+import { DefaultTheme, ThemeProvider } from "styled-components";
 
-const theme = {
+const theme: DefaultTheme = {
   baseColor: "#ffffff",
   buttonHeight: "32px",
   backgroundColorActive: "#62c400",

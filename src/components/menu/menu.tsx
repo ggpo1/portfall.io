@@ -7,31 +7,32 @@ import {
 } from "react-router-dom";
 import * as Markdown from "./menu.styles";
 
-type Tab = {
+export type Tab = {
   id: string;
+  icon: React.ReactNode;
   title: string;
 }
 
 type Props = {
   tabs: Tab[];
   contents: React.ReactNode[];
-}
+} & Partial<Markdown.DirectionProps>;
 
 export const Menu = memo((props: Props) => {
-  const { tabs, contents } = props;
+  const { tabs, contents, direction = "row" } = props;
   const [, setCount] = useState(0);
   const active = document.location.pathname;
   const handleUpdate = useCallback(() => setCount((prev) => prev + 1), []);
 
   return (
     <Router>
-      <Markdown.Wrapper>
-        <Markdown.Tabs>
-          {tabs.map(({ id, title }, index) => {
+      <Markdown.Wrapper direction={direction}>
+        <Markdown.Tabs direction={direction}>
+          {tabs.map(({ id, icon, title }, index) => {
             return (
               <Link key={`link_${id}`} to={id} onClick={handleUpdate}>
-                <Markdown.Tab tabIndex={index + 1} isActive={active === id}>
-                  {title}
+                <Markdown.Tab tabIndex={index + 1} isActive={active === id} title={title}>
+                  {icon}
                 </Markdown.Tab>
               </Link>
             );
@@ -42,7 +43,7 @@ export const Menu = memo((props: Props) => {
             {contents.map((content, index) => {
               const id = tabs[index].id;
               return (
-                <Route key={`route_${id}`} exact path={id}>
+                <Route key={`route_${id}`} exact={index === 0} path={id}>
                   {content}
                 </Route>
               );

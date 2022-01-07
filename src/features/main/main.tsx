@@ -1,10 +1,9 @@
 import { memo } from "react";
 import { ProfilePhoto, Bounce } from "components";
-import { hooks } from "shared";
 import * as Markdown from "./main.styles";
 
 export const Main = memo(() => {
-  const currentCompany = hooks.selectors.useCurrentCompany();
+  // const currentCompany = hooks.selectors.useCurrentCompany();
 
   return (
     <Markdown.Wrapper>
@@ -18,7 +17,7 @@ export const Main = memo(() => {
       </Bounce.Right>
       <Bounce.Left>
         <Markdown.FullName>
-          Frontend Developer в {currentCompany.title}
+          Frontend Developer в "ООО Мегаполис ИТ"
         </Markdown.FullName>
       </Bounce.Left>
     </Markdown.Wrapper>
