@@ -1,8 +1,8 @@
 import { memo } from "react";
 import { ProfilePhoto, Bounce } from "components";
-import * as Markdown from "./main.styles";
+import * as Markdown from "./home.styles";
 
-export const Main = memo(() => {
+export const Home = memo(() => {
   // const currentCompany = hooks.selectors.useCurrentCompany();
 
   return (

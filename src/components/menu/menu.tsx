@@ -48,6 +48,11 @@ export const Menu = memo((props: Props) => {
                 </Route>
               );
             })}
+            <Route key="route_404" path="*">
+              <div>
+                404
+              </div>
+            </Route>
           </Switch>
         </Markdown.Content>
       </Markdown.Wrapper>

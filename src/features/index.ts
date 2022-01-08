@@ -1,2 +1,3 @@
-export { Main } from "./main";
-export { Companies } from "./companies";
+export * from "./home";
+export * from "./demos";
+export * from "./companies";
