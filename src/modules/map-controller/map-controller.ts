@@ -39,12 +39,32 @@ export class MapController extends TypedEmitter {
     this.layer.setData([feature, feature1, feature2, feature3]);
   };
 
+  private handleBoundsUpdate = (e: mapboxgl.MapMouseEvent) => {
+    if (!this.map) return;
+    console.log(e);
+    const bounds = this.map.getBounds();
+    const box: [mapboxgl.Point, mapboxgl.Point] = [
+      this.map.project(bounds.getNorthWest()),
+      this.map.project(bounds.getSouthEast()),
+    ];
+
+    const viewFeatures = this.map.queryRenderedFeatures(box, {
+      layers: ["POINTS_LAYER"],
+    });
+
+    console.log(viewFeatures);
+  };
+
   private subscribe = () => {
     this.map?.on("load", this.handleLoad);
+    this.map?.on("zoomend", this.handleBoundsUpdate);
+    this.map?.on("dragend", this.handleBoundsUpdate);
   };
 
   private unsubscribe = () => {
     this.map?.off("load", this.handleLoad);
+    this.map?.off("zoomend", this.handleBoundsUpdate);
+    this.map?.off("dragend", this.handleBoundsUpdate);
   };
 
   public readonly destroy = () => {

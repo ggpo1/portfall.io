@@ -50,7 +50,7 @@ export const Menu = memo((props: Props) => {
             })}
             <Route key="route_404" path="*">
               <div>
-                404
+                Нет нет нет ... cюда нельзя
               </div>
             </Route>
           </Switch>
