@@ -1,7 +1,7 @@
-import { UiContext, initialValue } from "./store.context";
+import { Context, initialValue } from "./store.context";
 
 export const Store: React.FC = ({ children }) => {
   return (
-    <UiContext.Provider value={initialValue}>{children}</UiContext.Provider>
+    <Context.Provider value={initialValue}>{children}</Context.Provider>
   );
 }

@@ -1,11 +1,30 @@
 import { createContext } from "react";
+import { CompaniesStore, companiesStore } from "./companies";
 
-export class UiStore {}
-
-const store = new UiStore();
-
-export const initialValue = {
-  store,
+type Stores = {
+  companies: CompaniesStore;
 };
 
-export const UiContext = createContext(initialValue);
+export class UiStore {
+  private readonly stores: Stores = {
+    companies: companiesStore,
+  };
+
+  public get companiesStore() {
+    return this.get("companies");
+  }
+
+  public readonly get = (storeName: keyof Stores) => {
+    return this.stores[storeName];
+  };
+
+  public readonly destroy = () => {
+    Object.values(this.stores).forEach((store) => store.destroy?.());
+  };
+}
+
+export const initialValue = {
+  store: new UiStore(),
+};
+
+export const Context = createContext(initialValue);

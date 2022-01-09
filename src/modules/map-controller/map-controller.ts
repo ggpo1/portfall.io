@@ -1,12 +1,14 @@
 import mapboxgl from "mapbox-gl";
 import { TypedEmitter } from "tiny-typed-emitter";
 import { env } from "env";
+import { Company } from "types";
 import { PointsLayer } from "./layers";
 import { Geometry } from "./geometry";
 
 export class MapController extends TypedEmitter {
   private map?: mapboxgl.Map;
   private layer?: PointsLayer;
+  private collection?: Company.Collection;
 
   constructor(private readonly container: HTMLDivElement) {
     super();
@@ -65,6 +67,10 @@ export class MapController extends TypedEmitter {
     this.map?.off("load", this.handleLoad);
     this.map?.off("zoomend", this.handleBoundsUpdate);
     this.map?.off("dragend", this.handleBoundsUpdate);
+  };
+
+  public readonly setCollection = (collection: Company.Collection) => {
+    this.collection = collection;
   };
 
   public readonly destroy = () => {

@@ -1,4 +1,13 @@
+import { Store, Event } from "effector";
+
 export namespace Utils {
+  export interface IStore<T, E, H> {
+    readonly store: Store<T>;
+    readonly events: E;
+    readonly hooks: H;
+    readonly destroy?: () => void;
+  }
+
   export interface Identified {
     id: number;
   }

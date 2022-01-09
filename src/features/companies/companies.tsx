@@ -1,11 +1,17 @@
 import { memo, useLayoutEffect, useRef } from "react";
+import { useUiStore } from "store";
 import { Resizable } from "components";
 import { MapController } from "modules";
 import * as Markdown from "./companies.styles";
 
 export const Companies = memo(() => {
+  const store = useUiStore();
+  const companies = store.companiesStore.hooks.useList();
+  const currentCompany = store.companiesStore.hooks.useCurrent();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapController = useRef<MapController | null>(null);
+
+  console.log(currentCompany, companies);
 
   useLayoutEffect(() => {
     if (mapController.current || !containerRef.current) return;
@@ -22,7 +28,9 @@ export const Companies = memo(() => {
       <Markdown.Map ref={containerRef} />
       <Markdown.ListContainer>
         <Resizable>
-          <Markdown.List />
+          <Markdown.List>
+            {companies.map((company) => (<Markdown.ListItem>{company.title}</Markdown.ListItem>))}
+          </Markdown.List>
         </Resizable>
       </Markdown.ListContainer>
     </Markdown.Wrapper>

@@ -1,5 +1,5 @@
 import { Company } from "types";
 
 export type State = {
-  companies: Company.Collection;
+  collection: Company.Collection;
 };

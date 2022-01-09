@@ -1,6 +1,6 @@
 import { Company } from "types";
 
-export const initialState: Company.Instance[] = [
+export const companies: Company.Instance[] = [
   {
     id: 1,
     isActive: false,
