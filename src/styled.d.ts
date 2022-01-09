@@ -6,6 +6,7 @@ declare module "styled-components" {
     buttonHeight: string;
     backgroundColorActive: string;
     textColorDefault: string;
+    textColorHover: string;
     blockBorderRadius: string;
     blockShadow: string;
     fontSizes: {

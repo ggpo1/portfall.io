@@ -10,7 +10,7 @@ export class UiStore {
     companies: companiesStore,
   };
 
-  public get companiesStore() {
+  public get companies() {
     return this.get("companies");
   }
 

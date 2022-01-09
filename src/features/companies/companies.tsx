@@ -6,8 +6,8 @@ import * as Markdown from "./companies.styles";
 
 export const Companies = memo(() => {
   const store = useUiStore();
-  const companies = store.companiesStore.hooks.useList();
-  const currentCompany = store.companiesStore.hooks.useCurrent();
+  const companies = store.companies.hooks.useList();
+  const currentCompany = store.companies.hooks.useCurrent();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapController = useRef<MapController | null>(null);
 

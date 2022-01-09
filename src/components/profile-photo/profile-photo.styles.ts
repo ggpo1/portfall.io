@@ -26,6 +26,10 @@ const control = css`
   top: 0;
   width: 30px;
   height: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const LeftControl = styled.div`
