@@ -1,6 +1,6 @@
 import { memo, useLayoutEffect, useRef } from "react";
 import { useUiStore } from "store";
-import { Resizable } from "components";
+// import { Resizable } from "components";
 import { MapController } from "modules";
 import * as Markdown from "./companies.styles";
 
@@ -27,11 +27,11 @@ export const Companies = memo(() => {
     <Markdown.Wrapper>
       <Markdown.Map ref={containerRef} />
       <Markdown.ListContainer>
-        <Resizable>
+        {/* <Resizable> */}
           <Markdown.List>
             {companies.map((company) => (<Markdown.ListItem>{company.title}</Markdown.ListItem>))}
           </Markdown.List>
-        </Resizable>
+        {/* </Resizable> */}
       </Markdown.ListContainer>
     </Markdown.Wrapper>
   );

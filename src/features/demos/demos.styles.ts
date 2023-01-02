@@ -13,6 +13,9 @@ export const Container = styled.div`
 
 export const Cell = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   border-radius: 0.25rem;
   padding: 0.5rem 1rem;
   overflow: hidden;
@@ -29,13 +32,28 @@ export const Cell = styled.div`
   }
 `;
 
+export const Header = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  svg {
+    fill: ${({ theme }) => theme.backgroundColorActive};
+  }
+`;
+
 export const Title = styled.h4`
   margin: 0;
   padding: 0;
   color: ${({ theme }) => theme.textColorDefault};
 `;
 
+export const Link = styled.a`
+  text-decoration: none;
+`;
+
 export const PlayLink = styled.span`
-  font-size: 0.6rem;
+  font-size: 12px;
+  line-height: 14px;
   color: #f71e35;
 `;

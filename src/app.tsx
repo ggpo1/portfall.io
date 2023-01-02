@@ -1,9 +1,19 @@
-import { memo } from "react";
+import React from "react";
+import { World } from "modules";
 import { Menu } from "components";
 import { tabs, contents } from "./app.consts";
 import * as Markdown from "./app.styles";
 
-export const App = memo(() => {
+export const App = React.memo(() => {
+  const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
+  const controller = React.useRef<World | null>(null);
+
+  React.useLayoutEffect(() => {
+    if (!canvasRef.current || controller.current) return;
+
+    controller.current = new World(canvasRef.current);
+  }, [])
+
   return (
     <Markdown.Wrapper>
       <Menu
@@ -11,6 +21,8 @@ export const App = memo(() => {
         contents={contents}
         direction="column"
       />
+      {/* <Markdown.Canvas ref={canvasRef} /> */}
+      {/* <Markdown.DebugContainer /> */}
     </Markdown.Wrapper>
   );
 });

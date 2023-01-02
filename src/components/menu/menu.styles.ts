@@ -4,6 +4,7 @@ export type DirectionProps = { direction: "row" | "column" };
 
 export const Wrapper = styled.div<DirectionProps>`
   display: flex;
+  width: 100%;
   height: 100%;
   flex-direction: ${({ direction }) => (direction === "row" ? "column" : "row")};
   gap: 10px;

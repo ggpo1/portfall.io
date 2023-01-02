@@ -4,7 +4,7 @@ import * as Markdown from "./contacts.styles";
 export const Contacts = memo(() => {
   return (
     <Markdown.Container>
-      contacts
+      Контакты
     </Markdown.Container>
   );
 });

@@ -1,10 +1,10 @@
-import { memo } from "react";
+import React from "react";
 import { DefaultTheme, ThemeProvider } from "styled-components";
 
 const theme: DefaultTheme = {
   baseColor: "#ffffff",
   buttonHeight: "32px",
-  backgroundColorActive: "#62c400",
+  backgroundColorActive: "#027BFF",
   textColorDefault: "#747474",
   textColorHover: "#000000",
   blockBorderRadius: "5px",
@@ -16,6 +16,6 @@ const theme: DefaultTheme = {
   }
 }
 
-export const Theme = memo(({ children }) => (
-  <ThemeProvider theme={theme}>{children}</ThemeProvider>
+export const Theme = React.memo<React.PropsWithChildren<{}>>(({ children }) => (
+  <ThemeProvider theme={theme}>{children as any}</ThemeProvider>
 ));

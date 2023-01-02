@@ -1,4 +1,4 @@
-import { Store, Event } from "effector";
+import { Store } from "effector";
 
 export namespace Utils {
   export interface IStore<T, E, H> {

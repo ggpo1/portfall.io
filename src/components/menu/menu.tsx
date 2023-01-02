@@ -44,13 +44,13 @@ export const Menu = memo((props: Props) => {
               const id = tabs[index].id;
               return (
                 <Route key={`route_${id}`} exact={index === 0} path={id}>
-                  {content}
+                  {content as any}
                 </Route>
               );
             })}
             <Route key="route_404" path="*">
               <div>
-                Нет нет нет ... cюда нельзя
+                404
               </div>
             </Route>
           </Switch>

@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useMemo, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import * as Markdown from "./resizable.styles";
 
 type Props = {}
@@ -38,14 +38,15 @@ export const Resizable: React.FC<Props> = (props) => {
   }
 
   useLayoutEffect(() => {
-    if (!containerRef.current) return;
+    const container = containerRef.current;
+    if (!container) return;
 
-    containerRef.current.addEventListener("mousemove", handleMousemove);
+    container.addEventListener("mousemove", handleMousemove);
 
     return () => {
-      containerRef.current?.removeEventListener("mousemove", handleMousemove);
+      container?.removeEventListener("mousemove", handleMousemove);
     }
-  }, [containerRef]);
+  }, []);
 
   return (
     <Markdown.Container ref={containerRef} className="resizable">

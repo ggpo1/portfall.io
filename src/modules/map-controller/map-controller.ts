@@ -1,6 +1,5 @@
 import mapboxgl from "mapbox-gl";
 import { TypedEmitter } from "tiny-typed-emitter";
-import { env } from "env";
 import { Company } from "types";
 import { PointsLayer } from "./layers";
 import { Geometry } from "./geometry";
@@ -20,7 +19,7 @@ export class MapController extends TypedEmitter {
     this.map = new mapboxgl.Map({
       container: this.container,
       attributionControl: false,
-      style: env.REACT_APP_MAP_STYLE,
+      style: "mapbox://styles/johnlevis199/cklrxut6v0y9h17ptjrr7pzq0",
       zoom: 10,
       center: [37.618423, 55.751244],
       fadeDuration: 0,

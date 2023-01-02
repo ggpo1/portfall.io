@@ -37,6 +37,10 @@ export const ListItem = styled.div`
   border: 1px solid black;
   border-radius: 4px;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &:not(:last-child) {
     margin-bottom: 10px;
   }
