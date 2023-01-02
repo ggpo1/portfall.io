@@ -26,13 +26,13 @@ export const Companies = memo(() => {
   return (
     <Markdown.Wrapper>
       <Markdown.Map ref={containerRef} />
-      <Markdown.ListContainer>
-        {/* <Resizable> */}
-          <Markdown.List>
+      {/* <Markdown.ListContainer> */}
+      {/* <Resizable> */}
+      {/* <Markdown.List>
             {companies.map((company) => (<Markdown.ListItem>{company.title}</Markdown.ListItem>))}
-          </Markdown.List>
-        {/* </Resizable> */}
-      </Markdown.ListContainer>
+          </Markdown.List> */}
+      {/* </Resizable> */}
+      {/* </Markdown.ListContainer> */}
     </Markdown.Wrapper>
   );
 });
