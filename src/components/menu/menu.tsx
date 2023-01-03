@@ -1,4 +1,4 @@
-import { memo, useCallback, useState } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,11 +18,35 @@ type Props = {
   contents: React.ReactNode[];
 } & Partial<Markdown.DirectionProps>;
 
-export const Menu = memo((props: Props) => {
+export const Menu = React.memo<Props>((props) => {
   const { tabs, contents, direction = "row" } = props;
-  const [, setCount] = useState(0);
+  const [, setCount] = React.useState(0);
   const active = document.location.pathname;
-  const handleUpdate = useCallback(() => setCount((prev) => prev + 1), []);
+  const handleUpdate = React.useCallback(() => setCount((prev) => prev + 1), []);
+
+  React.useEffect(() => {
+    if (active.includes("demos")) {
+      document.title = "Проекты";
+      return;
+    }
+
+    if (active.includes("skills")) {
+      document.title = "Навыки";
+      return;
+    }
+
+    if (active.includes("companies")) {
+      document.title = "Компании";
+      return;
+    }
+
+    if (active.includes("contacts")) {
+      document.title = "Контакты";
+      return;
+    }
+
+    document.title = "Главная"
+  }, [active]);
 
   return (
     <Router>

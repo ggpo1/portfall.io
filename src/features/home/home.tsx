@@ -1,11 +1,11 @@
 import { memo } from "react";
-import { useUiStore } from "store";
+// import { useUiStore } from "store";
 import { ProfilePhoto } from "components";
 import * as Markdown from "./home.styles";
 
 export const Home = memo(() => {
-  const store = useUiStore();
-  const currentCompany = store.companies.hooks.useCurrent();
+  // const store = useUiStore();
+  // const currentCompany = store.companies.hooks.useCurrent();
 
   return (
     <Markdown.Wrapper>
@@ -19,7 +19,7 @@ export const Home = memo(() => {
       {/* </Bounce.Right> */}
       {/* <Bounce.Left> */}
       <Markdown.FullName>
-        Frontend Developer в "{currentCompany?.title}"
+        {/* Frontend Developer в "{currentCompany?.title}" */}
       </Markdown.FullName>
       {/* </Bounce.Left> */}
     </Markdown.Wrapper>
