@@ -10,7 +10,7 @@ export const tabs = [
   {
     id: "/demos",
     icon: <Icons.ProjectorIcon />,
-    title: "Демки"
+    title: "Проекты"
   },
   {
     id: "/skills",

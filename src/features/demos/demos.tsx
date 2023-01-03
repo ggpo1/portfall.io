@@ -1,5 +1,6 @@
 import { memo } from "react";
 import { ReactComponent as MedicalIcon } from "./medical.svg";
+import { ReactComponent as ChemistryIcon } from "./chemistry.svg";
 import * as Markdown from "./demos.styles";
 
 export const Demos = memo(() => {
@@ -21,7 +22,7 @@ export const Demos = memo(() => {
       <Markdown.Link href="https://chemistry-notes.arkhangelskii-it.ru" target="_blank" rel="noopener">
         <Markdown.Cell>
           <Markdown.Header>
-            <MedicalIcon />
+            <ChemistryIcon />
             <Markdown.Title>
               Дневник химика
             </Markdown.Title>

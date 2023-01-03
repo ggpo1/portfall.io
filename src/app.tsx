@@ -19,7 +19,7 @@ export const App = React.memo(() => {
       <Menu
         tabs={tabs}
         contents={contents}
-        direction="column"
+        direction="row"
       />
       {/* <Markdown.Canvas ref={canvasRef} /> */}
       {/* <Markdown.DebugContainer /> */}

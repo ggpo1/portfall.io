@@ -13,18 +13,20 @@ export const Wrapper = styled.div<DirectionProps>`
 export const Tabs = styled.div<DirectionProps>`
   display: flex;
   flex-direction: ${({ direction }) => direction};
-  gap: 10px;
+  gap: 16px;
   flex-grow: 0;
   margin-bottom: 10px;
 `;
 
 export const Tab = styled.button<{ isActive: boolean }>`
-  width: 45px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
   height: ${({ theme }) => theme.buttonHeight};
   border: none;
   background-color: ${({ theme }) => theme.baseColor};
-  border-bottom: ${({ theme, isActive }) => `1px solid ${isActive ? theme.backgroundColorActive : "#e5e5e5"}`};
-  color: ${({ theme, isActive }) => isActive && theme.backgroundColorActive};
+  border-bottom: ${({ theme, isActive }) => `${isActive ? `1px solid ${theme.backgroundColorActive}` : "none"}`};
+  color: ${({ theme, isActive }) => isActive && theme.backgroundColorActive} !important;
   opacity: ${({ isActive }) => !isActive && "0.5"};
 
   svg {
@@ -40,8 +42,12 @@ export const Tab = styled.button<{ isActive: boolean }>`
   }
 
   &:active {
-    color: #e5e5e5;
+    color: #e5e5e5 !important;
     border-bottom: 1px solid #e5e5e5;
+
+    svg {
+      fill: #e5e5e5;
+    }
   }
 `;
 

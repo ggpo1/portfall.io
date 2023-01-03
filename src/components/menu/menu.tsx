@@ -54,9 +54,9 @@ export const Menu = React.memo<Props>((props) => {
         <Markdown.Tabs direction={direction}>
           {tabs.map(({ id, icon, title }, index) => {
             return (
-              <Link key={`link_${id}`} to={id} onClick={handleUpdate}>
+              <Link style={{ textDecoration: "none" }} key={`link_${id}`} to={id} onClick={handleUpdate}>
                 <Markdown.Tab tabIndex={index + 1} isActive={active === id} title={title}>
-                  {icon}
+                  {icon} {title}
                 </Markdown.Tab>
               </Link>
             );

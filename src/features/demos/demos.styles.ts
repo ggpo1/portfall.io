@@ -39,6 +39,8 @@ export const Header = styled.div`
 
   svg {
     fill: ${({ theme }) => theme.backgroundColorActive};
+    color: ${({ theme }) => theme.backgroundColorActive};
+    stroke: ${({ theme }) => theme.backgroundColorActive};
   }
 `;
 
