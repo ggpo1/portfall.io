@@ -9,7 +9,7 @@ export const Wrapper = styled.div<DirectionProps>`
   flex-direction: ${({ direction }) => (direction === "row" ? "column" : "row")};
   gap: 10px;
 
-  @media screen and (max-width: 1127px) {
+  @media screen and (max-width: 1162px) {
     flex-direction: row;
   }
 `;
@@ -20,7 +20,7 @@ export const Tabs = styled.div<DirectionProps>`
   gap: 16px;
   flex-grow: 0;
 
-  @media screen and (max-width: 1127px) {
+  @media screen and (max-width: 1162px) {
     flex-direction: column;
   }
 `;
@@ -28,13 +28,14 @@ export const Tabs = styled.div<DirectionProps>`
 export const TabTitle = styled.span<{ isActive: boolean }>`
   color: ${({ theme, isActive }) => isActive && theme.backgroundColorActive} !important;
 
-  @media screen and (max-width: 1127px) {
+  @media screen and (max-width: 1162px) {
     display: none;
   }
 `;
 
 export const Tab = styled.button<{ isActive: boolean }>`
   display: flex;
+  padding: 0 2px;
   gap: 8px;
   align-items: center;
   height: ${({ theme }) => theme.buttonHeight};
@@ -48,8 +49,8 @@ export const Tab = styled.button<{ isActive: boolean }>`
     width: 24px;
     height: 24px;
 
-    fill: ${({ theme, isActive }) => isActive ? theme.backgroundColorActive : "#747474"};
-    stroke: ${({ theme, isActive }) => isActive ? theme.backgroundColorActive : "#747474"};
+    fill: ${({ theme, isActive }) => (isActive ? theme.backgroundColorActive : "#747474")};
+    stroke: ${({ theme, isActive }) => (isActive ? theme.backgroundColorActive : "#747474")};
   }
 
   &:focus-visible {

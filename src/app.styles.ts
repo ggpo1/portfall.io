@@ -6,8 +6,10 @@ export const Wrapper = styled.div`
   width: 50vw;
   height: 90vh;
 
-  @media screen and (min-width: 1920px) {
-    /* background-color: red; */
+  @media screen and (max-width: 1450px) {
+    width: 100vw;
+    padding: 10px 10px;
+    height: 100vh;
   }
 `;
 
