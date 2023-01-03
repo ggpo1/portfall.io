@@ -8,7 +8,7 @@ export const Container = styled.div`
   grid-template-rows: max-content;
   grid-auto-flow: dense;
   gap: 1rem;
-  padding: 0.5rem;
+  padding: 16px;
 `;
 
 export const Cell = styled.div`

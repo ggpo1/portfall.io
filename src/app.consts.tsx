@@ -4,22 +4,22 @@ import { Icons } from "assets";
 export const tabs = [
   {
     id: "/",
-    icon: <Icons.HomeIcon />,
+    icon: <Icons.PersonIcon style={{ fill: "none" }} />,
     title: "Главная"
   },
   {
     id: "/demos",
-    icon: <Icons.ProjectorIcon />,
+    icon: <Icons.ProjectsIcon />,
     title: "Проекты"
   },
   {
     id: "/skills",
-    icon: <Icons.SkillsIcon />,
+    icon: <Icons.ToolsIcon />,
     title: "Навыки"
   },
   {
     id: "/companies",
-    icon: <Icons.CompaniesIcon />,
+    icon: <Icons.ListIcon />,
     title: "Компании"
   },
   {

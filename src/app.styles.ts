@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  position: relative;
-  width: 90vw;
-  height: 90vh;
   display: flex;
+  position: relative;
+  width: 50vw;
+  height: 90vh;
+
+  @media screen and (min-width: 1920px) {
+    /* background-color: red; */
+  }
 `;
 
 export const Canvas = styled.canvas`

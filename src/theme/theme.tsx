@@ -8,7 +8,7 @@ const theme: DefaultTheme = {
   textColorDefault: "#747474",
   textColorHover: "#000000",
   blockBorderRadius: "5px",
-  blockShadow: "0px 0px 8px 0px rgba(34, 60, 80, 0.2)",
+  blockShadow: "0px 0px 8px 0px #027BFF",
   fontSizes: {
     small: "1em",
     medium: "2em",
