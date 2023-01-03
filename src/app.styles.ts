@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   display: flex;
   position: relative;
-  width: 50vw;
-  height: 90vh;
+  width: 50%;
+  height: 90%;
 
   @media screen and (max-width: 1450px) {
-    width: 100vw;
+    width: 100%;
     padding: 10px 10px;
-    height: 100vh;
+    height: 100%;
   }
 `;
 

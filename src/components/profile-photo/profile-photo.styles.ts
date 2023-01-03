@@ -8,7 +8,9 @@ export const Image = styled.div<{ src: string; size: string }>`
   position: relative;
   width: ${({ size }) => size};
   height: ${({ size }) => size};
+  backdrop-filter: blur(4px);
   border-radius: 50%;
+  box-shadow: 5px 5px 20px rgb(150 150 150 / 35%);
   background-color: #e5e5e5; // @note add to theme
   background-image: url(${({ src }) => src});
 
@@ -26,6 +28,8 @@ const control = css`
   top: 0;
   width: 30px;
   height: 100%;
+  opacity: 0;
+  transition: opacity 0.2s;
 
   &:hover {
     cursor: pointer;
@@ -34,21 +38,24 @@ const control = css`
 
 export const LeftControl = styled.div`
   ${control}
+  left: 3px;
 `;
 
 export const RightControl = styled.div`
   ${control}
-  right: 0;
+  right: 3px;
 `;
 
+const borderRadius = "25%";
+
 const rightBorder = css`
-  border-top-right-radius: 36%;
-  border-bottom-right-radius: 36%;
+  border-top-right-radius: ${borderRadius};
+  border-bottom-right-radius: ${borderRadius};
 `;
 
 const leftBorder = css`
-  border-top-left-radius: 36%;
-  border-bottom-left-radius: 36%;
+  border-top-left-radius: ${borderRadius};
+  border-bottom-left-radius: ${borderRadius};
 `;
 
 export const ControlButton = styled.button<{ isRight?: boolean }>`
@@ -56,9 +63,16 @@ export const ControlButton = styled.button<{ isRight?: boolean }>`
   background-color: #000000;
   opacity: 0.7;
   width: 100%;
-  height: 30%;
+  height: 20%;
   color: ${({ theme }) => theme.baseColor};
   border-radius: ${({ theme }) => theme.blockBorderRadius};
+  transition: opacity 0.15s;
 
   ${({ isRight }) => (isRight ? rightBorder : leftBorder)}
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.85;
+    color: ${({ theme }) => theme.baseColor};
+  }
 `;

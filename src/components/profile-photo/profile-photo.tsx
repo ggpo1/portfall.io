@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import React from "react";
 import * as Markdown from "./profile-photo.styles";
 
 type Props = {
@@ -6,18 +6,33 @@ type Props = {
   size?: number;
 }
 
-export const ProfilePhoto = memo((props: Props) => {
+export const ProfilePhoto = React.memo((props: Props) => {
   const { src, size = 64 } = props;
-  const [isShowControls, setIsShowControls] = useState(false);
-  const [active, setActive] = useState(0);
+  const leftButtonRef = React.useRef<HTMLDivElement | null>(null);
+  const rightButtonRef = React.useRef<HTMLDivElement | null>(null);
+  const [active, setActive] = React.useState(0);
 
-  const handleMouseEnter = () => {
-    setIsShowControls(true);
-  }
+  const showHideElements = React.useCallback((visibility: "visible" | "hidden") => {
+    const left = leftButtonRef.current;
+    const right = rightButtonRef.current;
+    const opacity = visibility === "visible" ? "1" : "0";
 
-  const handleMouseLeave = () => {
-    setIsShowControls(false)
-  }
+    if (left) {
+      left.style.opacity = opacity;
+    }
+
+    if (right) {
+      right.style.opacity = opacity;
+    }
+  }, []);
+
+  const handleMouseEnter = React.useCallback(() => {
+    showHideElements("visible");
+  }, [showHideElements])
+
+  const handleMouseLeave = React.useCallback(() => {
+    showHideElements("hidden");
+  }, [showHideElements])
 
   const handleLeftClick = () => {
     const newActive = active - 1;
@@ -34,16 +49,12 @@ export const ProfilePhoto = memo((props: Props) => {
   return (
     <Markdown.Controls onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <Markdown.Image src={src[active]} size={`${size}px`} />
-      {isShowControls && (
-        <>
-          <Markdown.RightControl>
-            <Markdown.ControlButton isRight onClick={handleRightClick}>{">"}</Markdown.ControlButton>
-          </Markdown.RightControl>
-          <Markdown.LeftControl>
-            <Markdown.ControlButton onClick={handleLeftClick}>{"<"}</Markdown.ControlButton>
-          </Markdown.LeftControl>
-        </>
-      )}
+      <Markdown.RightControl ref={leftButtonRef}>
+        <Markdown.ControlButton isRight onClick={handleRightClick}>&#8594;</Markdown.ControlButton>
+      </Markdown.RightControl>
+      <Markdown.LeftControl ref={rightButtonRef}>
+        <Markdown.ControlButton onClick={handleLeftClick}>&#8592;</Markdown.ControlButton>
+      </Markdown.LeftControl>
     </Markdown.Controls>
   );
 });

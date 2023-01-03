@@ -6,7 +6,7 @@ import * as Markdown from "./demos.styles";
 export const Demos = memo(() => {
   return (
     <Markdown.Container>
-      <Markdown.Link href="https://medical-card.arkhangelskii-it.ru" target="_blank" rel="noopener">
+      <Markdown.Link href="http://medical-card.arkhangelskii-it.ru" target="_blank" rel="noopener">
         <Markdown.Cell>
           <Markdown.Header>
             <MedicalIcon />
@@ -19,7 +19,7 @@ export const Demos = memo(() => {
           </Markdown.PlayLink>
         </Markdown.Cell>
       </Markdown.Link>
-      <Markdown.Link href="https://chemistry-notes.arkhangelskii-it.ru" target="_blank" rel="noopener">
+      <Markdown.Link href="http://chemistry-notes.arkhangelskii-it.ru" target="_blank" rel="noopener">
         <Markdown.Cell>
           <Markdown.Header>
             <ChemistryIcon />

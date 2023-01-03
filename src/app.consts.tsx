@@ -1,4 +1,4 @@
-import { Home, Demos, Companies, Contacts } from "features";
+import * as Features from "features";
 import { Icons } from "assets";
 
 export const tabs = [
@@ -31,9 +31,9 @@ export const tabs = [
 
 
 export const contents = [
-  <Home />,
-  <Demos />,
-  <div>Навыки</div>,
-  <Companies />,
-  <Contacts />,
+  <Features.Home />,
+  <Features.Demos />,
+  <Features.Tools />,
+  <Features.Companies />,
+  <Features.Contacts />,
 ];

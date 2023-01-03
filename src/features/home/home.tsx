@@ -10,7 +10,7 @@ export const Home = memo(() => {
   return (
     <Markdown.Wrapper>
       {/* <Bounce.Left> */}
-      <ProfilePhoto src={["img/1.jpeg", "img/2.jpeg", "img/3.webp"]} size={256} />
+      <ProfilePhoto src={["img/photo_2.png", "img/photo_1.jpg", "img/photo_3.jpg"]} size={256} />
       {/* </Bounce.Left> */}
       {/* <Bounce.Right> */}
       <Markdown.FullName>

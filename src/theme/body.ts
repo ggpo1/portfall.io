@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const Body = styled.div`
   display: grid;
   place-items: center;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: ${({ theme }) => theme.baseColor};
   box-sizing: border-box;
 
   * {
     box-sizing: border-box;
-    color: ${({ theme }) => theme.textColorDefault}
+    color: ${({ theme }) => theme.textColorDefault};
   }
 `;
