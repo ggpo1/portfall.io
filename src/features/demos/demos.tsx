@@ -18,6 +18,19 @@ export const Demos = memo(() => {
           </Markdown.PlayLink>
         </Markdown.Cell>
       </Markdown.Link>
+      <Markdown.Link href="https://chemistry-notes.arkhangelskii-it.ru" target="_blank" rel="noopener">
+        <Markdown.Cell>
+          <Markdown.Header>
+            <MedicalIcon />
+            <Markdown.Title>
+              Дневник химика
+            </Markdown.Title>
+          </Markdown.Header>
+          <Markdown.PlayLink>
+            Science-Tech проект для ученых, которым откроется возможность вести учет своих химических опытов и записывать их результаты.
+          </Markdown.PlayLink>
+        </Markdown.Cell>
+      </Markdown.Link>
     </Markdown.Container>
   );
 });
