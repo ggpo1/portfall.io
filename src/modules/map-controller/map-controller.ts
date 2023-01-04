@@ -25,7 +25,8 @@ export class MapController extends TypedEmitter {
       fadeDuration: 0,
       maxZoom: 19,
       maxPitch: 65,
-      hash: true,
+      hash: false,
+      antialias: true,
     });
   };
 

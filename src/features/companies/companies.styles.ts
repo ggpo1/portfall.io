@@ -17,10 +17,9 @@ export const Map = styled.div`
 export const ListContainer = styled.div`
   position: absolute;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   width: 90%;
-  min-height: 30%;
+  height: 300px;
   bottom: 0px;
   left: 0;
   transform: translateX(5.6%);
@@ -29,32 +28,24 @@ export const ListContainer = styled.div`
   border-radius: 10px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
-  box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
-  border: 1px solid transparent;
-`;
-
-export const List = styled.div`
-  width: 420px;
-  height: 230px;
-  border-radius: ${({ theme }) => theme.blockBorderRadius};
   background-color: ${({ theme }) => theme.baseColor};
   box-shadow: ${({ theme }) => theme.blockShadow};
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 10px;
+  gap: 8px;
 `;
 
 export const ListItem = styled.div`
+  display: flex;
+  align-items: center;
   width: 100%;
-  height: 100px;
+  height: 48px;
   padding: 5px;
-  border: 1px solid black;
+  border: 1px solid ${({ theme }) => theme.backgroundColorActive};
   border-radius: 4px;
 
   &:hover {
     cursor: pointer;
-  }
-
-  &:not(:last-child) {
-    margin-bottom: 10px;
   }
 `;

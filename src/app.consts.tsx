@@ -29,7 +29,6 @@ export const tabs = [
   }
 ]
 
-
 export const contents = [
   <Features.Home />,
   <Features.Demos />,

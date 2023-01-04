@@ -10,6 +10,15 @@ export const Wrapper = styled.div<DirectionProps>`
   gap: 10px;
 `;
 
+export const Title = styled.h2`
+  text-align: center;
+  display: none;
+
+  @media screen and (max-width: 650px) {
+    display: block;
+  }
+`;
+
 export const Tabs = styled.div<DirectionProps>`
   display: flex;
   flex-direction: ${({ direction }) => direction};

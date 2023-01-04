@@ -28,10 +28,7 @@ export const Companies = memo(() => {
       <Markdown.Map ref={containerRef} />
       {/* <Resizable> */}
       <Markdown.ListContainer>
-        красивый список компаний
-        {/* <Markdown.List>
-            {companies.map((company) => (<Markdown.ListItem>{company.title}</Markdown.ListItem>))}
-          </Markdown.List> */}
+        {companies.map((company) => (<Markdown.ListItem>{company.title}</Markdown.ListItem>))}
       </Markdown.ListContainer>
       {/* </Resizable> */}
     </Markdown.Wrapper>
