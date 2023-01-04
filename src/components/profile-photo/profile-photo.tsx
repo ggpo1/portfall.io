@@ -36,13 +36,13 @@ export const ProfilePhoto = React.memo((props: Props) => {
 
   const handleLeftClick = () => {
     const newActive = active - 1;
-    if (!src[newActive]) return;
+    if (!src[newActive]) return setActive(src.length - 1);
     setActive(newActive);
   }
 
   const handleRightClick = () => {
     const newActive = active + 1;
-    if (!src[newActive]) return;
+    if (!src[newActive]) return setActive(0);
     setActive(newActive);
   }
 

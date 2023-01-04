@@ -63,7 +63,7 @@ export const Home = React.memo(() => {
         Могу с легкостью настроить сервак с Nginx, настроить CI/CD в gitlab, чтобы развернуть свое приложение.
       </Markdown.AboutText>
       <Markdown.AboutText>
-        В свободное от работы время пишу свои проект, в которых выступаю в роли Fullstack разработчика и DevOps. 
+        В свободное от работы время пишу свои проекты, в которых выступаю в роли Fullstack разработчика и DevOps. 
         В своих проектах я предпочитаю использовать для Frontend части - React, TypeScript, ESBuild, ESLint, Effector. 
         Для Backend чаще всего использую .Net Core с шаблоном webapi и PostgreSQL.
       </Markdown.AboutText>
