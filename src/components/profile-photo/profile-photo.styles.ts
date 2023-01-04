@@ -6,8 +6,6 @@ export const Controls = styled.div`
 
 export const Image = styled.div<{ src: string; size: string }>`
   position: relative;
-  width: ${({ size }) => size};
-  height: ${({ size }) => size};
   backdrop-filter: blur(4px);
   border-radius: 50%;
   box-shadow: 5px 5px 20px rgb(150 150 150 / 35%);
@@ -19,6 +17,36 @@ export const Image = styled.div<{ src: string; size: string }>`
   background-size: cover;
 
   box-shadow: 0px 0px 8px 0px rgba(229, 229, 229, 0.2) inset;
+
+  @media screen and (min-width: 1441px) {
+    width: 550px;
+    height: 550px;
+  }
+
+  @media screen and (min-width: 1441px) {
+    width: 550px;
+    height: 550px;
+  }
+
+  @media screen and (max-width: 1440px) {
+    width: 400px;
+    height: 400px;
+  }
+
+  @media screen and (max-width: 671px) {
+    width: 300px;
+    height: 300px;
+  }
+
+  @media screen and (max-width: 565px) {
+    width: 250px;
+    height: 250px;
+  }
+
+  @media screen and (max-width: 317px) {
+    width: 200px;
+    height: 200px;
+  }
 `;
 
 const control = css`

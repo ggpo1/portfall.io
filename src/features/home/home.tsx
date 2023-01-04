@@ -10,12 +10,20 @@ export const Home = React.memo(() => {
 
   React.useEffect(() => {
     const handleResize = () => {
-      const windowWidth = window.innerWidth;
+      const { innerWidth, innerHeight } = window;
 
-      if (windowWidth <= 1450) {
-        setSize(windowWidth / 1.3);
+      let calculatingSize = innerWidth;
+
+      if (innerWidth > innerHeight) {
+        calculatingSize = innerHeight;
+      }
+
+      if (calculatingSize <= 1450) {
+        setSize(calculatingSize / 1.3);
+      } else if (calculatingSize >= 1450 && calculatingSize <= 1920) {
+        setSize(calculatingSize / 1);
       } else {
-        setSize(windowWidth / 4);
+        setSize(calculatingSize / 4);
       }
     }
 
@@ -37,6 +45,28 @@ export const Home = React.memo(() => {
       <Markdown.CurrentJobTitle>
         Senior Frontend Developer в <Markdown.CompanyLink href={currentCompany?.site} target="_blank" rel="noopener">"{currentCompany?.title}"</Markdown.CompanyLink>
       </Markdown.CurrentJobTitle>
+      <Markdown.AboutText>
+        Привет, меня зовут Вова. Мне 23 года, живу и работаю в Москве.
+        Занимаюсь программированием с 15 лет, за это время успел перепробовать много
+        языков, технологий и направлений в IT. На текущий момент имею 5 лет опыта коммерческой
+        разработки в таких сферах, как: документооборот, обучающие системы, складское
+        оборудование(различные WMS для управления и диагностики состояния складов) и разработка
+        различных интеллектуальных транспортых систем.
+
+      </Markdown.AboutText>
+      <Markdown.AboutText>
+        Перепробовал различные языки, такие как: JavaScript, C#, Python, Java, PHP.
+        В последнее время существенно углубился в Frontend разработку с использованием
+        Typescript, React, ESBuild/Webpack, Effector/Redux, ThreeJS, ESLint, Prettier и всяких пакетов для тестирования (Cypress, Jest).
+        За время работы на последнем месте успел круто прокачать знания в CanvasAPI, WebGL и в картографии в целом.
+        Так же получил опыт полного цикла создания приложения, начиная от идеи, заканчивая внедрением и сопровождением.
+        Могу с легкостью настроить сервак с Nginx, настроить CI/CD в gitlab, чтобы развернуть свое приложение.
+      </Markdown.AboutText>
+      <Markdown.AboutText>
+        В свободное от работы время пишу свои проект, в которых выступаю в роли Fullstack разработчика и DevOps. 
+        В своих проектах я предпочитаю использовать для Frontend части - React, TypeScript, ESBuild, ESLint, Effector. 
+        Для Backend чаще всего использую .Net Core с шаблоном webapi и PostgreSQL.
+      </Markdown.AboutText>
     </Markdown.Wrapper>
   );
 });
