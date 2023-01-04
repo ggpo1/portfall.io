@@ -51,19 +51,6 @@ export const Menu = React.memo<Props>((props) => {
   return (
     <Router>
       <Markdown.Wrapper direction={direction}>
-        <Markdown.Tabs direction={direction}>
-          {tabs.map(({ id, icon, title }, index) => {
-            const isActive = active === id;
-
-            return (
-              <Link style={{ textDecoration: "none" }} key={`link_${id}`} to={id} onClick={handleUpdate}>
-                <Markdown.Tab tabIndex={index + 1} isActive={isActive} title={title}>
-                  {icon} <Markdown.TabTitle isActive={isActive}>{title}</Markdown.TabTitle>
-                </Markdown.Tab>
-              </Link>
-            );
-          })}
-        </Markdown.Tabs>
         <Markdown.Content>
           <Switch>
             {contents.map((content, index) => {
@@ -81,6 +68,19 @@ export const Menu = React.memo<Props>((props) => {
             </Route>
           </Switch>
         </Markdown.Content>
+        <Markdown.Tabs direction={direction}>
+          {tabs.map(({ id, icon, title }, index) => {
+            const isActive = active === id;
+
+            return (
+              <Link title={title} style={{ textDecoration: "none" }} key={`link_${id}`} to={id} onClick={handleUpdate}>
+                <Markdown.Tab tabIndex={index + 1} isActive={isActive} title={title}>
+                  {icon} <Markdown.TabTitle isActive={isActive}>{title}</Markdown.TabTitle>
+                </Markdown.Tab>
+              </Link>
+            );
+          })}
+        </Markdown.Tabs>
       </Markdown.Wrapper>
     </Router>
   );

@@ -8,27 +8,20 @@ export const Wrapper = styled.div<DirectionProps>`
   height: 100%;
   flex-direction: ${({ direction }) => (direction === "row" ? "column" : "row")};
   gap: 10px;
-
-  @media screen and (max-width: 1162px) {
-    flex-direction: row;
-  }
 `;
 
 export const Tabs = styled.div<DirectionProps>`
   display: flex;
   flex-direction: ${({ direction }) => direction};
   gap: 16px;
+  justify-content: space-around;
   flex-grow: 0;
-
-  @media screen and (max-width: 1162px) {
-    flex-direction: column;
-  }
 `;
 
 export const TabTitle = styled.span<{ isActive: boolean }>`
   color: ${({ theme, isActive }) => isActive && theme.backgroundColorActive} !important;
 
-  @media screen and (max-width: 1162px) {
+  @media screen and (max-width: 650px) {
     display: none;
   }
 `;
@@ -70,11 +63,13 @@ export const Tab = styled.button<{ isActive: boolean }>`
 
 export const Content = styled.div`
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
   border-radius: ${({ theme }) => theme.blockBorderRadius};
-  outline: 1px solid ${({ theme }) => theme.backgroundColorActive};
+  border: 1px solid ${({ theme }) => theme.backgroundColorActive};
   padding: 1px;
-  /* box-shadow: ${({ theme }) => theme.blockShadow}; */
+  box-shadow: ${({ theme }) => theme.blockShadow};
+  overflow: hidden;
 `;

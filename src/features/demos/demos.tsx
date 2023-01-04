@@ -32,6 +32,8 @@ export const Demos = memo(() => {
           </Markdown.PlayLink>
         </Markdown.Cell>
       </Markdown.Link>
+      <Markdown.CellPlaceholder />
+      <Markdown.CellPlaceholder />
     </Markdown.Container>
   );
 });

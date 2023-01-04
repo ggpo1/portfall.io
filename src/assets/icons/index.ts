@@ -8,3 +8,4 @@ export { ReactComponent as PersonIcon } from "./person.svg";
 export { ReactComponent as ListIcon } from "./list.svg";
 export { ReactComponent as ToolsIcon } from "./tools.svg";
 export { ReactComponent as ProjectsIcon } from "./projects.svg";
+export { ReactComponent as DtmIcon } from "./dtm.svg";

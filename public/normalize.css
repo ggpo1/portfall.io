@@ -8,7 +8,24 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
- * {
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+}
+
+*::-webkit-scrollbar-thumb {
+  min-height: 50px;
+  background: rgba(3, 40, 76, 0.1);
+  border-radius: 2px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+  margin-right: 4px;
+}
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
