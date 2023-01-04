@@ -20,5 +20,15 @@ export const Tool = styled.div`
   height: 200px;
   padding: 8px;
   border-radius: 4px;
-  background-color: #edeff0;
+  overflow: hidden;
+  color: ${({ theme }) => theme.textColorDefault};
+  background: linear-gradient(137.85deg, #f1f3f6 13.92%, #fff 84.77%);
+  backdrop-filter: blur(4px);
+  box-shadow: 5px 5px 20px rgba(150, 150, 150, 0.35);
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.002);
+    z-index: 999999;
+  }
 `;

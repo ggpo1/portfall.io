@@ -28,7 +28,7 @@ export const Cell = styled.div`
 
   &:hover {
     cursor: pointer;
-    transform: scale(1.001);
+    transform: scale(1.002);
     z-index: 999999;
   }
 
