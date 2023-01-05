@@ -4,7 +4,8 @@ export const companies: Company.Instance[] = [
   {
     id: 1,
     isActive: false,
-    title: "ООО Т-ЛОГИКА",
+    title: "Т-ЛОГИКА",
+    type: "ООО",
     description: "",
     scope: "Junior Java/Python Developer",
     stack: ["flask", "spring", "jinja2"],
@@ -22,8 +23,10 @@ export const companies: Company.Instance[] = [
   {
     id: 2,
     isActive: false,
-    title: "ООО ВИДЕОСАППОРТ",
-    description: "",
+    title: "Видеосаппорт",
+    type: "ООО",
+    icon: "/img/perfema.svg",
+    description: "Амбициозная команда специалистов с большим опытом реализации нестандартных проектов, сложных высоконагруженных систем и инновационных аппаратно-программных комплексов.",
     scope: "Junior Frontend Developer",
     stack: ["vue.js", "vueX", "react.js", "redux"],
     address: "г. Москва, ул. нагорная, д20",
@@ -47,8 +50,10 @@ export const companies: Company.Instance[] = [
   {
     id: 3,
     isActive: false,
-    title: "ООО Техновик",
-    description: "",
+    title: "Техновик",
+    type: "ООО",
+    // icon: "/img/technovik.png",
+    description: "Полный спектр услуг для организаций, эксплуатирующих складское оборудование либо планирующих его приобретение.",
     scope: "FullStack Developer(.Net/.Net Core, React/VueJS/React Native)",
     stack: [""],
     site: "https://www.technovik.ru/",
@@ -66,9 +71,11 @@ export const companies: Company.Instance[] = [
   {
     id: 4,
     isActive: true,
-    title: "ООО Мегаполис",
+    title: "Мегаполис ИТ",
+    type: "ООО",
+    icon: "/img/megapolis.svg",
     site: "https://www.megapolis-it.ru/",
-    description: "",
+    description: "Мониторинг событий. Координация транспорта. Управление дорожным движением и информирование его участников.",
     scope: "Senior Frontend Developer",
     projects: [
       {

@@ -1,5 +1,6 @@
 import { memo, useLayoutEffect, useRef } from "react";
 import { useUiStore } from "store";
+import { Company } from "types";
 // import { Resizable } from "components";
 import { MapController } from "modules";
 import * as Markdown from "./companies.styles";
@@ -12,6 +13,10 @@ export const Companies = memo(() => {
   const mapController = useRef<MapController | null>(null);
 
   console.log(currentCompany, companies);
+
+  const handleClick = (company: Company.Instance) => () => {
+    store.companies.events.setSelectedCompany(company);
+  }
 
   useLayoutEffect(() => {
     if (mapController.current || !containerRef.current) return;
@@ -26,11 +31,21 @@ export const Companies = memo(() => {
   return (
     <Markdown.Wrapper>
       <Markdown.Map ref={containerRef} />
-      {/* <Resizable> */}
       <Markdown.ListContainer>
-        {companies.map((company) => (<Markdown.ListItem>{company.title}</Markdown.ListItem>))}
+        {companies.map((company) => (
+          <Markdown.ListItem onClick={handleClick(company)}>
+            {company.icon ? <Markdown.CompanyLogo src={company.icon} /> : <Markdown.CompanyLogoPlaceholder />}
+            <Markdown.ListItemCenter>
+              <Markdown.ListItemTitle>
+                {company.title}
+              </Markdown.ListItemTitle>
+              <Markdown.ListItemDescription>
+                {company.description}
+              </Markdown.ListItemDescription>
+            </Markdown.ListItemCenter>
+          </Markdown.ListItem>
+        ))}
       </Markdown.ListContainer>
-      {/* </Resizable> */}
     </Markdown.Wrapper>
   );
 });

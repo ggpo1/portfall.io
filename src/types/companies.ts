@@ -8,7 +8,9 @@ export namespace Company {
   }
   export interface Instance extends Utils.Identified {
     isActive: boolean;
+    icon?: string;
     title: string;
+    type: string;
     description: string;
     scope: string;
     stack: string[];

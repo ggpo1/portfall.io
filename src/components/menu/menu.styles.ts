@@ -78,7 +78,6 @@ export const Content = styled.div`
   flex-grow: 1;
   border-radius: ${({ theme }) => theme.blockBorderRadius};
   border: 1px solid ${({ theme }) => theme.backgroundColorActive};
-  padding: 1px;
   box-shadow: ${({ theme }) => theme.blockShadow};
   overflow: hidden;
 `;
