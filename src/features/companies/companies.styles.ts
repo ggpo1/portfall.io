@@ -23,10 +23,9 @@ export const ListContainer = styled.div`
   position: fixed;
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 45vw;
   height: 300px;
-  bottom: 8.9%;
-  transform: translateX(5.6%);
+  transform: translateX(27.5vw);
   left: 0;
   z-index: 99;
   background-color: ${({ theme }) => theme.baseColor};
@@ -34,7 +33,7 @@ export const ListContainer = styled.div`
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
   background-color: ${({ theme }) => theme.baseColor};
-  box-shadow: ${({ theme }) => theme.blockShadow};
+  box-shadow: 0px -7px 17px 1px rgba(34, 60, 80, 0.2);
   overflow-y: auto;
   overflow-x: hidden;
   padding: 10px;
@@ -43,9 +42,10 @@ export const ListContainer = styled.div`
   border-bottom: none;
 
   @media screen and (max-width: 1450px) {
-    width: 90%;
-    bottom: 51.55px;
-    transform: translateX(5.6%);
+    width: calc(100vw - 20px);
+    transform: translateX(10px);
+    border-bottom-left-radius: ${({ theme }) => theme.blockBorderRadius};
+    border-bottom-right-radius: ${({ theme }) => theme.blockBorderRadius};
   }
 `;
 
@@ -54,8 +54,37 @@ export const CompanyLogo = styled.img`
   height: 24px;
 `;
 
+export const Resize = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 2%;
+  margin-bottom: 2px;
+`;
+
+export const ResizeButton = styled.button`
+  display: flex;
+  width: 20%;
+  height: 100%;
+  flex-shrink: 0;
+  background-color: ${({ theme }) => theme.textColorDefault};
+  border-radius: 6px;
+  opacity: 0.7;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+
+  &:hover {
+    cursor: nw-resize;
+    opacity: 1;
+  }
+`;
+
 export const CompanyLogoPlaceholder = styled.div`
   display: flex;
+  flex-shrink: 0;
   width: 24px;
   height: 24px;
   border-radius: 4px;
@@ -68,12 +97,13 @@ export const ListItem = styled.div`
   width: 100%;
   height: 48px;
   padding: 0 8px;
-  border-radius: 4px;
+  border-radius: 6px;
   gap: 8px;
+  border: 1px solid transparent;
 
   &:hover {
     cursor: pointer;
-    outline: 1px solid ${({ theme }) => theme.textColorDefault};
+    border-color: ${({ theme }) => theme.textColorDefault};
   }
 `;
 
