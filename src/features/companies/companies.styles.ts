@@ -126,7 +126,8 @@ export const ListItem = styled.div`
 
   &:hover {
     cursor: pointer;
-    border-color: ${({ theme }) => theme.textColorDefault};
+    border-color: rgba(116, 116, 116, 0.1);
+    background-color: rgba(116, 116, 116, 0.1);
   }
 `;
 
