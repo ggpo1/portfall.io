@@ -135,6 +135,7 @@ export const ListItemCenter = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2px;
+  overflow: hidden;
 `;
 
 export const ListItemTitle = styled.div`
@@ -149,7 +150,7 @@ export const ListItemDescription = styled.div`
   display: block;
   width: 100%;
   font-size: 11px;
-  color: rgba(3, 40, 76, 0.66);
+  color: rgba(3, 40, 76, 0.66) !important;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
