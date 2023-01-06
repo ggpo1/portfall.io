@@ -11,6 +11,18 @@ export const Container = styled.div`
   overflow-x: hidden;
 `;
 
+export const ExpanderContainer = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 16px;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 10px;
+  padding-bottom: 16px;
+`;
+
 export const Cell = styled.div`
   position: relative;
   display: flex;
@@ -18,7 +30,7 @@ export const Cell = styled.div`
   height: 150px;
   flex-direction: column;
   gap: 8px;
-  border-radius: 0.25rem;
+  border-radius: 0.30rem;
   padding: 0.5rem 1rem;
   overflow: hidden;
   color: ${({ theme }) => theme.textColorDefault};
@@ -50,6 +62,7 @@ export const Header = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
+  font-size: 15px;
 
   svg {
     fill: ${({ theme }) => theme.backgroundColorActive};
@@ -75,4 +88,5 @@ export const PlayLink = styled.span`
   font-size: 12px;
   line-height: 14px;
   color: #f71e35;
+  color: rgba(3, 40, 76, 0.66) !important;
 `;

@@ -19,7 +19,7 @@ export const Tool = styled.div`
   flex: 1;
   height: 200px;
   padding: 8px;
-  border-radius: 4px;
+  border-radius: 0.30rem;
   overflow: hidden;
   color: ${({ theme }) => theme.textColorDefault};
   background: linear-gradient(137.85deg, #f1f3f6 13.92%, #fff 84.77%);

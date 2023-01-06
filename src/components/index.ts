@@ -3,3 +3,4 @@ export * from "./profile-photo";
 export * from "./resizable";
 export * from "./play-button";
 export * as Bounce from "./bounce";
+export * from "./expander";
