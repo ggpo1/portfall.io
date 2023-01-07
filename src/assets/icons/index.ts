@@ -10,3 +10,4 @@ export { ReactComponent as ToolsIcon } from "./tools.svg";
 export { ReactComponent as ProjectsIcon } from "./projects.svg";
 export { ReactComponent as DtmIcon } from "./dtm.svg";
 export { ReactComponent as BackIcon } from "./back.svg";
+export { ReactComponent as LinkIcon } from "./link.svg";

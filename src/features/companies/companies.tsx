@@ -5,6 +5,8 @@ import { Icons } from "assets";
 import { MapController } from "modules";
 import * as Markdown from "./companies.styles";
 
+let calculatingInterval: NodeJS.Timeout;
+
 export const Companies = React.memo(() => {
   const store = useUiStore();
   const companies = store.companies.hooks.useList();
@@ -23,7 +25,21 @@ export const Companies = React.memo(() => {
     const listRect = listRef.current.getBoundingClientRect();
 
     listRef.current.style.top = `${(wrapperRect?.bottom ?? 0) - (listRect?.height ?? 0) + 1}px`;
-  }, [])
+  }, []);
+
+  const handleCompanyClick = React.useCallback(() => {
+    if (!selectedCompany || !selectedCompany.site) return;
+
+    const link = document.createElement("a");
+
+    link.href = selectedCompany.site;
+    link.rel = "noopener";
+    link.target = "_blank";
+    link.click();
+    link.remove();
+  }, [selectedCompany]);
+
+  calculateListPosition();
 
   const handleClick = (company: Company.Instance | null) => () => {
     store.companies.events.setSelectedCompany(company);
@@ -63,10 +79,9 @@ export const Companies = React.memo(() => {
       window.addEventListener("pointerup", handleResizePointerUp);
     }
 
+    clearInterval(calculatingInterval);
 
-    calculateListPosition();
-
-    window.setInterval(calculateListPosition, 10);
+    calculatingInterval = setInterval(calculateListPosition, 10);
 
     window.addEventListener("resize", calculateListPosition);
     window.addEventListener("wheel", calculateListPosition);
@@ -106,7 +121,7 @@ export const Companies = React.memo(() => {
                 <Markdown.ListItemCenter>
                   <Markdown.ListItemTitle>
                     {company.title} {company.id === currentCompany?.id && (
-                      <Markdown.CurrentTitle>текущая</Markdown.CurrentTitle>
+                      <Markdown.CurrentTitle>*текущая</Markdown.CurrentTitle>
                     )}
                   </Markdown.ListItemTitle>
                   <Markdown.ListItemDescription>
@@ -121,13 +136,25 @@ export const Companies = React.memo(() => {
                 <Markdown.Back onClick={handleClick(null)}>
                   <Icons.BackIcon />
                 </Markdown.Back>
-                {selectedCompany.icon ? <Markdown.CompanyLogo src={selectedCompany.icon} /> : <Markdown.CompanyLogoPlaceholder />}
-                {selectedCompany.title} {selectedCompany.id === currentCompany?.id && (
-                  <Markdown.CurrentTitle>текущая</Markdown.CurrentTitle>
-                )}
+                <Markdown.SectionHeading>
+                  <Markdown.SelectedHeaderText onClick={handleCompanyClick}>
+                    {selectedCompany.icon ? <Markdown.CompanyLogo src={selectedCompany.icon} /> : <Markdown.CompanyLogoPlaceholder />}
+                    {selectedCompany.title}
+                    <Markdown.LinkIcon>
+                      <Icons.LinkIcon />
+                    </Markdown.LinkIcon>
+                  </Markdown.SelectedHeaderText>
+                  {selectedCompany.id === currentCompany?.id && (
+                    <Markdown.Current>
+                      <Markdown.CurrentTitle>*текущая</Markdown.CurrentTitle>
+                    </Markdown.Current>
+                  )}
+                </Markdown.SectionHeading>
               </Markdown.SelectedHeader>
               <Markdown.SelectedContent>
-                Информация
+                <Markdown.SelectedDescription>
+                  {selectedCompany.description}
+                </Markdown.SelectedDescription>
               </Markdown.SelectedContent>
             </>
           )}

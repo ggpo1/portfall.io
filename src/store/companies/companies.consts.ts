@@ -7,6 +7,7 @@ export const companies: Company.Instance[] = [
     title: "Т-ЛОГИКА",
     type: "ООО",
     description: "",
+    site: "https://t-logika.ru",
     scope: "Junior Java/Python Developer",
     stack: ["flask", "spring", "jinja2"],
     address: "г. Москва, ул. 2-Я Рощинская, д4",
@@ -26,7 +27,8 @@ export const companies: Company.Instance[] = [
     title: "Видеосаппорт",
     type: "ООО",
     icon: "/img/perfema.svg",
-    description: "Амбициозная команда специалистов с большим опытом реализации нестандартных проектов, сложных высоконагруженных систем и инновационных аппаратно-программных комплексов.",
+    description:
+      "Амбициозная команда специалистов с большим опытом реализации нестандартных проектов, сложных высоконагруженных систем и инновационных аппаратно-программных комплексов.",
     scope: "Junior Frontend Developer",
     stack: ["vue.js", "vueX", "react.js", "redux"],
     address: "г. Москва, ул. нагорная, д20",
@@ -53,7 +55,8 @@ export const companies: Company.Instance[] = [
     title: "Техновик",
     type: "ООО",
     // icon: "/img/technovik.png",
-    description: "Полный спектр услуг для организаций, эксплуатирующих складское оборудование либо планирующих его приобретение.",
+    description:
+      "Полный спектр услуг для организаций, эксплуатирующих складское оборудование либо планирующих его приобретение.",
     scope: "FullStack Developer(.Net/.Net Core, React/VueJS/React Native)",
     stack: [""],
     site: "https://www.technovik.ru/",
@@ -75,7 +78,8 @@ export const companies: Company.Instance[] = [
     type: "ООО",
     icon: "/img/megapolis.svg",
     site: "https://www.megapolis-it.ru/",
-    description: "Мониторинг событий. Координация транспорта. Управление дорожным движением и информирование его участников.",
+    description:
+      "Мониторинг событий. Координация транспорта. Управление дорожным движением и информирование его участников.",
     scope: "Senior Frontend Developer",
     projects: [
       {

@@ -35,7 +35,7 @@ export const ListContainer = styled.div`
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
   background-color: ${({ theme }) => theme.baseColor};
-  box-shadow: 0px -7px 17px 1px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px -15px 21px 10px rgba(34, 60, 80, 0.1);
   padding: 10px;
   padding-right: 0px;
   border: 1px solid ${({ theme }) => theme.backgroundColorActive};
@@ -184,14 +184,49 @@ export const Back = styled.button`
 
 export const SelectedHeader = styled.div`
   display: flex;
-  justify-content: center;
+  /* justify-content: space-between; */
   align-items: center;
   width: 100%;
   flex-shrink: 0;
   height: 50px;
-  gap: 8px;
+  /* gap: 8px; */
   display: flex;
   font-weight: bold;
+`;
+
+export const SectionHeading = styled.div`
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-right: 24px;
+`;
+
+export const SelectedHeaderText = styled.div`
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 4px;
+
+  &:hover {
+    cursor: pointer;
+
+    svg {
+      stroke: ${({ theme }) => theme.backgroundColorActive};
+    }
+  }
+`;
+
+export const LinkIcon = styled.div`
+  height: 100%;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    margin-top: 50%;
+    stroke: #e4e4e4;
+  }
 `;
 
 export const SelectedContent = styled.div`
@@ -199,4 +234,14 @@ export const SelectedContent = styled.div`
   width: 100%;
   height: 300px;
   flex-shrink: 0;
+`;
+
+export const Current = styled.div`
+  margin-left: 8px;
+`;
+
+export const SelectedDescription = styled.div`
+  text-indent: 20px;
+  font-size: 13px;
+  color: rgba(3, 40, 76, 0.66) !important;
 `;
