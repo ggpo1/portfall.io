@@ -15,7 +15,7 @@ export const tabs = [
   {
     id: "/skills",
     icon: <Icons.ToolsIcon />,
-    title: "Навыки"
+    title: "Инструментарий"
   },
   {
     id: "/companies",

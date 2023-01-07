@@ -14,7 +14,7 @@ export const Title = styled.h2`
   text-align: center;
   display: none;
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 700px) {
     display: block;
   }
 `;
@@ -30,7 +30,7 @@ export const Tabs = styled.div<DirectionProps>`
 export const TabTitle = styled.span<{ isActive: boolean }>`
   color: ${({ theme, isActive }) => isActive && theme.backgroundColorActive} !important;
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 700px) {
     display: none;
   }
 `;

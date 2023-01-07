@@ -1,15 +1,13 @@
-import { memo } from "react";
+import React from "react";
 import { Expander } from "components";
 import { ReactComponent as MedicalIcon } from "./medical.svg";
 import { ReactComponent as ChemistryIcon } from "./chemistry.svg";
 import * as Markdown from "./demos.styles";
 
-export const Demos = memo(() => {
-
-
+export const Demos = React.memo(() => {
   return (
     <Markdown.Container>
-      <Expander title="В разработке" titlePaddingLeft={16}>
+      <Expander title="В разработке" titlePaddingLeft={32}>
         <Markdown.ExpanderContainer>
           <Markdown.Link href="http://medical-card.arkhangelskii-it.ru" target="_blank" rel="noopener">
             <Markdown.Cell>

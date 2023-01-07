@@ -6,7 +6,7 @@ export const Container = styled.div`
   height: 100%;
   gap: 16px;
   flex-wrap: wrap;
-  padding: 16px;
+  padding: 16px 0;
   overflow-y: auto;
   overflow-x: hidden;
 `;
@@ -21,6 +21,7 @@ export const ExpanderContainer = styled.div`
   overflow-x: hidden;
   padding-top: 10px;
   padding-bottom: 16px;
+  padding-left: 16px;
 `;
 
 export const Cell = styled.div`
