@@ -109,7 +109,7 @@ export const Companies = React.memo(() => {
     return () => {
       mapController.current?.destroy();
     }
-  }, []);
+  }, [companies]);
 
   return (
     <Markdown.Wrapper ref={wrapperRef}>
