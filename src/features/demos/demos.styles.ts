@@ -22,6 +22,7 @@ export const ExpanderContainer = styled.div`
   padding-top: 10px;
   padding-bottom: 16px;
   padding-left: 16px;
+  padding-right: 16px;
 `;
 
 export const Cell = styled.div`
