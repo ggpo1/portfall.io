@@ -23,6 +23,10 @@ export namespace Company {
   }
 
   export class Collection extends Utils.Collection<Instance> {
+    public readonly getFeatures = () => {
+      return this.list.map((item) => item.feature);
+    };
+
     public readonly getCurrent = () => {
       return this.list.find((company: Instance) => company.isActive);
     };

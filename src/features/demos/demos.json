@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Дневник пациента",
+    "description": "Med-Tech проект для врачей, которым откроется возможность вести учет посещения и осмотров своих пациентов.",
+    "link": "https://medical-card.arkhangelskii-it.ru",
+    "icon": "/img/medical.svg",
+    "iconSize": "24px"
+  },
+  {
+    "title": "Дневник химика",
+    "description": "Science-Tech проект для ученых, которым откроется возможность вести учет своих химических опытов и записывать их результаты.",
+    "link": "https://chemistry-notes.arkhangelskii-it.ru",
+    "icon": "/img/chemistry.svg",
+    "iconSize": "20px"
+  }
+]

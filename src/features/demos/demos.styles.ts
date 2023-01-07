@@ -32,7 +32,7 @@ export const Cell = styled.div`
   height: 150px;
   flex-direction: column;
   gap: 8px;
-  border-radius: 0.30rem;
+  border-radius: 0.3rem;
   padding: 0.5rem 1rem;
   overflow: hidden;
   color: ${({ theme }) => theme.textColorDefault};
@@ -45,7 +45,6 @@ export const Cell = styled.div`
     transform: scale(1.002);
     z-index: 999999;
   }
-
 
   @media screen and (max-width: 671px) {
     width: 100%;
@@ -65,12 +64,6 @@ export const Header = styled.div`
   align-items: center;
   gap: 8px;
   font-size: 15px;
-
-  svg {
-    fill: ${({ theme }) => theme.backgroundColorActive};
-    color: ${({ theme }) => theme.backgroundColorActive};
-    stroke: ${({ theme }) => theme.backgroundColorActive};
-  }
 `;
 
 export const Title = styled.h4`
@@ -91,4 +84,9 @@ export const PlayLink = styled.span`
   line-height: 14px;
   color: #f71e35;
   color: rgba(3, 40, 76, 0.66) !important;
+`;
+
+export const Icon = styled.img`
+  width: 24px;
+  height: 24px;
 `;

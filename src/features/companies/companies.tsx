@@ -43,6 +43,10 @@ export const Companies = React.memo(() => {
 
   const handleClick = (company: Company.Instance | null) => () => {
     store.companies.events.setSelectedCompany(company);
+
+    if (!company) return mapController.current?.unFocus();
+
+    mapController.current?.focusOn(company.id)
   }
 
   React.useEffect(() => {
@@ -100,6 +104,7 @@ export const Companies = React.memo(() => {
     if (mapController.current || !containerRef.current) return;
 
     mapController.current = new MapController(containerRef.current);
+    mapController.current.setCollection(new Company.Collection(companies));
 
     return () => {
       mapController.current?.destroy();

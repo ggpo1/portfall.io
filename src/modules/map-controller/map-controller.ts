@@ -2,7 +2,10 @@ import mapboxgl from "mapbox-gl";
 import { TypedEmitter } from "tiny-typed-emitter";
 import { Company } from "types";
 import { PointsLayer } from "./layers";
-import { Geometry } from "./geometry";
+
+const defaultCenter = [37.6129, 55.656] as [number, number];
+const defaultZoom = 9;
+const mapStyle = "mapbox://styles/johnlevis199/cklrxut6v0y9h17ptjrr7pzq0";
 
 export class MapController extends TypedEmitter {
   private map?: mapboxgl.Map;
@@ -19,13 +22,13 @@ export class MapController extends TypedEmitter {
     this.map = new mapboxgl.Map({
       container: this.container,
       attributionControl: false,
-      style: "mapbox://styles/johnlevis199/cklrxut6v0y9h17ptjrr7pzq0",
-      zoom: 10,
-      center: [37.618423, 55.751244],
+      style: mapStyle,
+      zoom: defaultZoom,
+      center: defaultCenter,
       fadeDuration: 0,
       maxZoom: 19,
       maxPitch: 65,
-      hash: false,
+      hash: true,
       antialias: true,
     });
   };
@@ -34,11 +37,12 @@ export class MapController extends TypedEmitter {
     if (!this.map) return;
 
     this.layer = new PointsLayer(this.map);
-    const feature = Geometry.createPointFeature([37.616926, 55.709632]);
-    const feature1 = Geometry.createPointFeature([37.603424, 55.67896]);
-    const feature2 = Geometry.createPointFeature([37.696822, 55.776568]);
-    const feature3 = Geometry.createPointFeature([37.49037, 55.804435]);
-    this.layer.setData([feature, feature1, feature2, feature3]);
+    const features = this.collection?.getFeatures();
+    // const feature = Geometry.createPointFeature([37.616926, 55.709632]);
+    // const feature1 = Geometry.createPointFeature([37.603424, 55.67896]);
+    // const feature2 = Geometry.createPointFeature([37.696822, 55.776568]);
+    // const feature3 = Geometry.createPointFeature([37.49037, 55.804435]);
+    this.layer.setData(features);
   };
 
   private handleBoundsUpdate = (e: mapboxgl.MapMouseEvent) => {
@@ -71,6 +75,29 @@ export class MapController extends TypedEmitter {
 
   public readonly setCollection = (collection: Company.Collection) => {
     this.collection = collection;
+  };
+
+  public readonly focusOn = (id: number) => {
+    const focusElement = this.collection?.findById(id);
+
+    if (!focusElement) return;
+
+    this.map?.flyTo({
+      animate: true,
+      zoom: 16,
+      duration: 1000,
+      center: focusElement.feature.geometry.coordinates as [number, number],
+      offset: [0, -200],
+    });
+  };
+
+  public readonly unFocus = () => {
+    this.map?.flyTo({
+      animate: true,
+      duration: 1000,
+      zoom: defaultZoom,
+      center: defaultCenter,
+    });
   };
 
   public readonly destroy = () => {
