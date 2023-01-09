@@ -173,21 +173,23 @@ export const Companies = React.memo(() => {
                     </Markdown.ImageExpanderContainer>
                   </Expander>
                 )}
-                <Expander title="Проекты над которыми я работал" fontSize={13} titlePaddingLeft={20}>
-                  <Markdown.Projects>
-                    {selectedCompany.projects.map((project) => (
-                      <>
-                        <Markdown.ProjectTitle href={project.site} target="_blank" rel="noopener" onClick={handleLinkClick}>
-                          {project.title}
-                          <Markdown.ProjectLinkIcon>
-                            <Icons.LinkIcon />
-                          </Markdown.ProjectLinkIcon>
-                        </Markdown.ProjectTitle>
-                        <Markdown.ProjectDescription>{project.fullTitle}</Markdown.ProjectDescription>
-                      </>
-                    ))}
-                  </Markdown.Projects>
-                </Expander>
+                {selectedCompany.projects.length ? (
+                  <Expander title="Проекты над которыми я работал" fontSize={13} titlePaddingLeft={20}>
+                    <Markdown.Projects>
+                      {selectedCompany.projects.map((project) => (
+                        <>
+                          <Markdown.ProjectTitle href={project.site} target="_blank" rel="noopener" onClick={handleLinkClick}>
+                            {project.title}
+                            <Markdown.ProjectLinkIcon>
+                              <Icons.LinkIcon />
+                            </Markdown.ProjectLinkIcon>
+                          </Markdown.ProjectTitle>
+                          <Markdown.ProjectDescription>{project.fullTitle}</Markdown.ProjectDescription>
+                        </>
+                      ))}
+                    </Markdown.Projects>
+                  </Expander>
+                ) : null}
               </Markdown.SelectedContent>
             </>
           )}

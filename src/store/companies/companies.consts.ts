@@ -6,7 +6,7 @@ export const companies: Company.Instance[] = [
     isActive: false,
     title: "Т-ЛОГИКА",
     type: "ООО",
-    description: "",
+    description: "Нет информации",
     site: "https://t-logika.ru",
     scope: "Junior Java/Python Developer",
     stack: ["flask", "spring", "jinja2"],
