@@ -229,8 +229,15 @@ export const LinkIcon = styled.div`
   }
 `;
 
+export const ImageExpanderContainer = styled.div`
+  width: 100%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+`;
+
 export const SelectedContent = styled.div`
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 300px;
   flex-shrink: 0;
@@ -243,5 +250,19 @@ export const Current = styled.div`
 export const SelectedDescription = styled.div`
   text-indent: 20px;
   font-size: 13px;
-  color: rgba(3, 40, 76, 0.66) !important;
+  padding: 8px;
+`;
+
+export const Projects = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
+
+export const ProjectTitle = styled.div`
+  display: flex;
+  line-height: 13px;
+  height: 13px;
+  font-size: 13px;
+  padding-left: 8px;
 `;

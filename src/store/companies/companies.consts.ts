@@ -81,11 +81,31 @@ export const companies: Company.Instance[] = [
     description:
       "Мониторинг событий. Координация транспорта. Управление дорожным движением и информирование его участников.",
     scope: "Senior Frontend Developer",
+    images: ["/img/dtm1.jpeg", "/img/dtm2.jpeg", "/img/dtm3.png", "/img/aisms.jpeg", "/img/warehouse1.jpeg", "/img/asuns.jpeg"],
     projects: [
       {
         id: "dtm",
-        title: "Система анализа транспортных потоков (ДТМ)",
+        title: "ДТМ",
+        fullTitle: "Система анализа транспортных потоков",
         site: "https://www.megapolis-it.ru/project/dtm",
+      },
+      {
+        id: "warehouse",
+        title: "Список оборудования",
+        fullTitle: "Учет объектов дорожно-транспортной инфраструктуры",
+        site: "https://www.megapolis-it.ru/project/equipment-list",
+      },
+      {
+        id: "asuns",
+        title: "АСУНС",
+        fullTitle: "Система управления нештатными ситуациями",
+        site: "https://www.megapolis-it.ru/project/asuns",
+      },
+      {
+        id: "aisms",
+        title: "АИСМС",
+        fullTitle: "Автоматизированная информационная система «Маршрутная сеть»",
+        site: "https://www.megapolis-it.ru/project/aisms",
       },
     ],
     stack: [""],

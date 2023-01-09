@@ -4,6 +4,7 @@ export namespace Company {
   export interface Project {
     id: string;
     title: string;
+    fullTitle?: string;
     site: string;
   }
   export interface Instance extends Utils.Identified {
@@ -16,6 +17,7 @@ export namespace Company {
     address: string;
     feature: GeoJSON.Feature<GeoJSON.Point>;
     projects: Project[];
+    images?: string[];
     startDate?: string;
     endDate?: string;
     icon?: string;

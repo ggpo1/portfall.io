@@ -11,12 +11,12 @@ export const Container = styled.div`
   }
 `;
 
-export const Title = styled.div<{ isExpanded: boolean; titlePaddingLeft?: number }>`
+export const Title = styled.div<{ isExpanded: boolean; titlePaddingLeft?: number; fontSize?: number }>`
   display: flex;
   align-items: center;
   font-weight: bold;
   user-select: none;
-  font-size: 17px;
+  font-size: ${({ fontSize }) => (typeof fontSize === "number" ? `${fontSize}px` : "17px")};
   gap: 2px;
   padding-left: ${({ titlePaddingLeft }) => `${titlePaddingLeft ?? 0}px`};
 
@@ -26,5 +26,3 @@ export const Title = styled.div<{ isExpanded: boolean; titlePaddingLeft?: number
     transform: rotate(${({ isExpanded }) => (isExpanded ? "90deg" : "0")});
   }
 `;
-
-export const Content = styled.div``;

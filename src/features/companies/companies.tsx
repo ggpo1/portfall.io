@@ -3,6 +3,8 @@ import { useUiStore } from "store";
 import { Company } from "types";
 import { Icons } from "assets";
 import { MapController } from "modules";
+import { Expander } from "components";
+import { ImageCollection } from "./image-collection";
 import * as Markdown from "./companies.styles";
 
 let calculatingInterval: NodeJS.Timeout;
@@ -160,6 +162,25 @@ export const Companies = React.memo(() => {
                 <Markdown.SelectedDescription>
                   {selectedCompany.description}
                 </Markdown.SelectedDescription>
+                {selectedCompany.images && (
+                  <Expander title="Скриншоты" fontSize={13} titlePaddingLeft={20}>
+                    <Markdown.ImageExpanderContainer>
+                      <ImageCollection images={selectedCompany.images} />
+                    </Markdown.ImageExpanderContainer>
+                  </Expander>
+                )}
+                <Expander title="Проекты над которыми я работал" fontSize={13} titlePaddingLeft={20}>
+                  <Markdown.Projects>
+                    {selectedCompany.projects.map((project) => (
+                      <Markdown.ProjectTitle>
+                        {project.title}
+                        <Markdown.LinkIcon>
+                          <Icons.LinkIcon />
+                        </Markdown.LinkIcon>
+                      </Markdown.ProjectTitle>
+                    ))}
+                  </Markdown.Projects>
+                </Expander>
               </Markdown.SelectedContent>
             </>
           )}

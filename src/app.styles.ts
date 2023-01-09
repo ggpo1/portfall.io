@@ -24,3 +24,24 @@ export const DebugContainer = styled.div`
   height: 100%;
   border-left: 1px solid #e5e5e5;
 `;
+
+export const PopupNode = styled.div`
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.6);
+
+  .popup-blocking-overlay {
+    z-index: 22;
+  }
+
+  &:empty {
+    display: none;
+  }
+`;
