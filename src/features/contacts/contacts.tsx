@@ -24,6 +24,9 @@ export const Contacts = memo(() => {
             <Icons.LinkIcon />
           </Markdown.LinkIcon>
         </Markdown.Link>
+        <Markdown.Link href="https://hh.ru/resume/ff0921ffff0409a3260039ed1f495956673368" target="_blank" rel="noopener">
+          hh.ru
+        </Markdown.Link>
         <Markdown.Link href="https://github.com/ggpo1" target="_blank" rel="noopener">
           Github
           <Markdown.LinkIcon>

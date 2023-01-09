@@ -230,6 +230,7 @@ export const LinkIcon = styled.div`
 `;
 
 export const ImageExpanderContainer = styled.div`
+  display: flex;
   width: 100%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -256,13 +257,40 @@ export const SelectedDescription = styled.div`
 export const Projects = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
+  padding-top: 8px;
 `;
 
-export const ProjectTitle = styled.div`
+export const ProjectTitle = styled.a`
   display: flex;
+  align-items: center;
   line-height: 13px;
   height: 13px;
   font-size: 13px;
   padding-left: 8px;
+  font-weight: 600;
+  gap: 4px;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+
+    svg {
+      stroke: ${({ theme }) => theme.backgroundColorActive};
+    }
+  }
+`;
+
+export const ProjectLinkIcon = styled.div`
+  svg {
+    width: 16px;
+    height: 16px;
+    margin-bottom: 50%;
+    stroke: #e4e4e4;
+  }
+`;
+
+export const ProjectDescription = styled.div`
+  font-size: 13px;
+  padding: 0 8px;
 `;

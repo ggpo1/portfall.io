@@ -31,12 +31,15 @@ export const companies: Company.Instance[] = [
       "Амбициозная команда специалистов с большим опытом реализации нестандартных проектов, сложных высоконагруженных систем и инновационных аппаратно-программных комплексов.",
     scope: "Junior Frontend Developer",
     stack: ["vue.js", "vueX", "react.js", "redux"],
+    images: ["/img/eaist2.webp", "/img/eaist3.webp", "/img/eaist4.webp", "/img/eaist1.webp"],
     address: "г. Москва, ул. нагорная, д20",
     site: "https://perfema.com/",
     projects: [
       {
         id: "eaist",
         title: "Платформа интерактивного обучения",
+        fullTitle:
+          "Наша команда разработала специализированное программное обеспечение «Платформа интерактивного обучения», позволяющее вести процесс тренинга пользователей Единой автоматизированной информационной системы торгов города Москвы (ЕАИСТ), для ГБУ «Сервисный центр 44».",
         site: "https://perfema.com/projects/interactive_learning/",
       },
     ],
@@ -59,9 +62,24 @@ export const companies: Company.Instance[] = [
       "Полный спектр услуг для организаций, эксплуатирующих складское оборудование либо планирующих его приобретение.",
     scope: "FullStack Developer(.Net/.Net Core, React/VueJS/React Native)",
     stack: [""],
+    images: [
+      "/img/a100_4.jpeg",
+      "/img/a100_1.jpeg",
+      "/img/a100_2.jpeg",
+      "/img/a100_3.jpeg",
+      "/img/a100_6.jpeg",
+      "/img/a100_7.jpeg",
+    ],
     site: "https://www.technovik.ru/",
     address: "г. Москва, ул. 2-Я Рощинская, д. 4",
-    projects: [],
+    projects: [
+      {
+        id: "a100",
+        title: "a100",
+        fullTitle: "Автоматизированная система управления эксплуатацией стеллажного оборудования",
+        site: "https://a-100.pro",
+      },
+    ],
     feature: {
       type: "Feature",
       properties: {},
@@ -81,7 +99,14 @@ export const companies: Company.Instance[] = [
     description:
       "Мониторинг событий. Координация транспорта. Управление дорожным движением и информирование его участников.",
     scope: "Senior Frontend Developer",
-    images: ["/img/dtm1.jpeg", "/img/dtm2.jpeg", "/img/dtm3.png", "/img/aisms.jpeg", "/img/warehouse1.jpeg", "/img/asuns.jpeg"],
+    images: [
+      "/img/dtm1.jpeg",
+      "/img/dtm2.jpeg",
+      "/img/dtm3.png",
+      "/img/aisms.jpeg",
+      "/img/warehouse1.jpeg",
+      "/img/asuns.jpeg",
+    ],
     projects: [
       {
         id: "dtm",

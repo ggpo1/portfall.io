@@ -20,6 +20,10 @@ export const Companies = React.memo(() => {
   const containerRef = React.useRef<HTMLDivElement | null>(null);
   const mapController = React.useRef<MapController | null>(null);
 
+  const handleLinkClick = React.useCallback((event: React.MouseEvent) => {
+    event.stopPropagation();
+  }, []);
+
   const calculateListPosition = React.useCallback(() => {
     if (!listRef.current) return;
 
@@ -172,12 +176,15 @@ export const Companies = React.memo(() => {
                 <Expander title="Проекты над которыми я работал" fontSize={13} titlePaddingLeft={20}>
                   <Markdown.Projects>
                     {selectedCompany.projects.map((project) => (
-                      <Markdown.ProjectTitle>
-                        {project.title}
-                        <Markdown.LinkIcon>
-                          <Icons.LinkIcon />
-                        </Markdown.LinkIcon>
-                      </Markdown.ProjectTitle>
+                      <>
+                        <Markdown.ProjectTitle href={project.site} target="_blank" rel="noopener" onClick={handleLinkClick}>
+                          {project.title}
+                          <Markdown.ProjectLinkIcon>
+                            <Icons.LinkIcon />
+                          </Markdown.ProjectLinkIcon>
+                        </Markdown.ProjectTitle>
+                        <Markdown.ProjectDescription>{project.fullTitle}</Markdown.ProjectDescription>
+                      </>
                     ))}
                   </Markdown.Projects>
                 </Expander>

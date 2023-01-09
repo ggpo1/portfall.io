@@ -16,7 +16,7 @@ export const Expander = React.memo<Props>((props) => {
   }, []);
 
   return (
-    <Markdown.Container onClick={handleClick}>
+    <Markdown.Container className="expander-container" onClick={handleClick}>
       <Markdown.Title isExpanded={isExpanded} fontSize={props.fontSize} titlePaddingLeft={props.titlePaddingLeft}>
         {props.title}
         <ChevronIcon />
