@@ -35,7 +35,7 @@ export const PopupNode = styled.div`
   top: 0;
   left: 0;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
 
   .popup-blocking-overlay {
     z-index: 22;
